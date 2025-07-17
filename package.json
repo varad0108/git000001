@@ -2,14 +2,21 @@
   "name": "github-ci-test",
   "version": "1.0.0",
   "main": "index.js",
-   "scripts": {
-    "test": "jest --outputFile=report.html --json"
-  },
+"scripts": {
+  "test": "jest",
+  "lint": "eslint .",
+  "format": "prettier --check ."
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "jest": "^30.0.4"
+    "@eslint/js": "^9.31.0",
+    "eslint": "^9.31.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.3.0",
+    "jest": "^30.0.4",
+    "prettier": "^3.6.2"
   }
 }
