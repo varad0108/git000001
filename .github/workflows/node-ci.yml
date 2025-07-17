@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Node.js CI with Artifacts
 
 on:
   push:
@@ -15,5 +15,11 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Run tests with npx
-      run: npx jest
+    - name: Run tests
+      run: npx jest --outputFile=report.html --json
+
+    - name: Upload report artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-report
+        path: report.html
